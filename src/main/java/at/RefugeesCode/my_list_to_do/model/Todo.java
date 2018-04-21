@@ -8,37 +8,46 @@ public class Todo {
     @Id
     private String id;
     private String task;
+    private boolean done;
 
-    public void setId(String id) {
-        this.id = id;
+
+    public Todo() {
+
     }
 
-    public void setTask(String task) {
+    public Todo(String task, Boolean done) {
         this.task = task;
-    }
-
-    public void setDone(Boolean done) {
         this.done = done;
     }
 
-    private Boolean done;
-
-
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTask() {
         return task;
     }
 
-    public Boolean getDone() {
+    public void setTask(String task) {
+        this.task = task;
+    }
+
+    public boolean getDone() {
         return done;
     }
-    public Todo (String task,Boolean done){
-        this.task=task;
-        this.done=done;
+
+    public void setDone(boolean done) {
+        this.done = done;
     }
+
+
+
+
+
 
 
 }

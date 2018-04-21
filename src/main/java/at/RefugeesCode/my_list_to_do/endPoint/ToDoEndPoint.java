@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/todoes")
+@RequestMapping("/todos")
 public class ToDoEndPoint {
     private Repository repository;
 
@@ -19,7 +19,6 @@ public class ToDoEndPoint {
 
     @PostMapping
     Todo addTodo(@RequestBody Todo todo){
-
        repository.save(todo);
        return todo;
 
@@ -39,9 +38,19 @@ public class ToDoEndPoint {
 
         Todo todo = repository.findById(id).get();
         todo.setDone(true);
+        repository.save(todo);
         return todo;
-
-
+    }
+    @PutMapping("/{id}/notdone")
+    Todo checkunDone(@PathVariable String id){
+        Todo todo = repository.findById(id).get();
+        todo.setDone(false);
+        repository.save(todo);
+        return todo;
+    }
+    @DeleteMapping("/{id}/delete")
+    void delete(@PathVariable String id){
+        repository.deleteById(id);
     }
 
 }

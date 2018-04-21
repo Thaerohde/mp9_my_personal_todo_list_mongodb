@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>at.RefugeesCode</groupId>
-	<artifactId>my_list_to_do</artifactId>
+	<artifactId>my_personal_todo_list_mongodb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>my_list_to_do</name>
+	<name>my_personal_todo_list_mongodb</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
